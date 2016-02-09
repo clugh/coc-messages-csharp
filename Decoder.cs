@@ -119,7 +119,7 @@ namespace coc_messages_csharp
                     JObject decoded = this.decodeFields(reader, (JArray)this.definitions["component"][type]["fields"]);
                     if (this.definitions["component"][type]["extensions"] != null)
                     {
-                        if (this.definitions["component"][type]["extensions"][decoded["id"]] == null)
+                        if (this.definitions["component"][type]["extensions"][(int)decoded["id"]] == null)
                             throw new ArgumentOutOfRangeException(String.Format("{0}(id={1}) has not yet been implemented.", type, decoded["id"]));
                     }
                     return decoded;
